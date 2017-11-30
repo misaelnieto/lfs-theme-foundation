@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var gulp = require('gulp');
 var $    = require('gulp-load-plugins')();
 
 var sassPaths = [
@@ -17,9 +18,27 @@ gulp.task('sass', function() {
     .pipe($.autoprefixer({
       browsers: ['last 2 versions', 'ie >= 9']
     }))
-    .pipe(gulp.dest('lfs_theme_foundation/static/css'));
+    .pipe(gulp.dest('lfs_theme_foundation/static/css/'));
 });
 
-gulp.task('default', ['sass'], function() {
+gulp.task('copy', function () {
+    return gulp.src([
+      'bower_components/jquery/dist/jquery.min.js',
+      'bower_components/knockout/dist/knockout.js',
+    ])
+    .pipe(gulp.dest('lfs_theme_foundation/static/js/'));
+});
+
+gulp.task('concat_foundation', function() {
+  return gulp.src([
+      'bower_components/what-input/dist/what-input.min.js',
+      'bower_components/foundation-sites/dist/js/foundation.min.js',
+      'bower_components/foundation-sites/dist/js/plugins/*.min.js',
+    ])
+    .pipe($.concat('foundation-bundle.min.js'))
+    .pipe(gulp.dest('lfs_theme_foundation/static/js/'));
+});
+
+gulp.task('default', ['copy', 'concat_foundation', 'sass'], function() {
   gulp.watch(['lfs_theme_foundation/static/sccs/**/*.scss'], ['sass']);
 });

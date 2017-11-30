@@ -4,7 +4,10 @@ LFS Foundation Theme
 
 This is a responsive theme for `Django LFS <http://getlfs.com/>`_ using the
  `Foundation framework <http://foundation.zurb.com/>`_ version 6.
- 
+
+**Important note**: Foundation's dependencies include jQuery v3.x. That may break stuff.
+
+
 Package Installation
 ====================
 
@@ -94,9 +97,11 @@ Working with static assets
 Normally, you shouldn't need to compile the SCCS files.
 
 
-To compile assets you need node.js installed. Once you have nodejs and npm
-installed open the folder in your command line, and install the needed
-dependencies:
+To compile assets you need `NodeJS <http://https://nodejs.org/en/>`_ ,
+`Gulp <http://https://gulpjs.com/>`_  and `Bower <https://bower.io/>`_.
+
+Once you installed these open the folder in your command line, and install the
+needed dependencies:
 
 .. code:: bash
     cd lfs-theme-foundation

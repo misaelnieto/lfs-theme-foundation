@@ -13,3 +13,4 @@ lfs.db
 *media/
 *.mo
 node_modules/
+bower_components/
