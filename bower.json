@@ -1,0 +1,23 @@
+{
+  "name": "lfs-theme-foundation",
+  "version": "0.1.0",
+  "authors": [
+    "Noe Nieto <nnieto@percepcionunitaria.org>"
+  ],
+  "description": "Responsive theme for LFS based on Zurb's Foundation",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "http://foundation.zurb.com",
+  "dependencies": {
+    "foundation-sites": "~6.4.0",
+    "motion-ui": "~1.2.3"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": true
+}
